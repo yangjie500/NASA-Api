@@ -1,0 +1,23 @@
+{
+  "name": "lesson4_nasa-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test --prefix server && npm test --prefix client",
+    "typescript": "npm run compile --prefix server",
+    "serve": "npm run start --prefix server",
+    "client": "npm run start --prefix client",
+    "watch": "concurrently \"npm run typescript\" \"npm run serve\" \"npm run client\" ",
+    "build": "npm run build --prefix server",
+    "deploy": "npm run build --prefix client && npm run build --prefix server",
+    "deploy-cluster": "npm run build --prefix client && npm run cluster --prefix servern"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^7.2.1",
+    "dotenv": "^16.0.1"
+  }
+}
