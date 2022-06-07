@@ -15,10 +15,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const supertest_1 = __importDefault(require("supertest"));
 const app_1 = __importDefault(require("../../app"));
 const mongo_1 = require("../../services/mongo");
+const planets_model_1 = require("../../models/planets.model");
 describe('Launches API', () => {
     // Will run before all the test in this (Launches API) describe block is run
     beforeAll(() => __awaiter(void 0, void 0, void 0, function* () {
         yield (0, mongo_1.mongoConnect)();
+        yield (0, planets_model_1.loadPlanetsData)();
     }));
     afterAll(() => __awaiter(void 0, void 0, void 0, function* () {
         yield (0, mongo_1.mongoDisconnect)();

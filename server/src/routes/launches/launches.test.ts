@@ -2,12 +2,14 @@ import request from 'supertest';
 
 import app from '../../app';
 import { mongoConnect, mongoDisconnect } from '../../services/mongo';
+import { loadPlanetsData } from '../../models/planets.model'
 
 
 describe('Launches API', () => {
   // Will run before all the test in this (Launches API) describe block is run
   beforeAll(async () => {
     await mongoConnect();
+    await loadPlanetsData();
   });
 
   afterAll(async () => {
