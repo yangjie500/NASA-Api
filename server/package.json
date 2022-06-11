@@ -9,7 +9,8 @@
     "start": "set PORT=8000 && nodemon src/server.js",
     "compile": "tsc --watch",
     "build": "tsc && set PORT=8000 && node src/server.js",
-    "cluster": "tsc && set PORT=8000 && pm2 start src/server.js -i max"
+    "cluster": "tsc && set PORT=8000 && pm2 start src/server.js -i max",
+    "serve": "set PORT=8000 && node src/server.js"
   },
   "keywords": [],
   "author": "",
@@ -20,7 +21,6 @@
     "csv-parse": "^5.0.4",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
-    "lesson4_nasa-project": "file:..",
     "mongoose": "^6.3.5",
     "morgan": "^1.10.0",
     "pm2": "^5.2.0"
